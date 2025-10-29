@@ -14,8 +14,13 @@ test: $(TARGET)
 	@./$(TARGET) < test1.txt
 	@echo "\nRunning test2..."
 	@./$(TARGET) < test2.txt
-	@echo "\nRunning test3..."
+	@echo "\nRunning test3 (negative weights)..."
 	@./$(TARGET) < test3.txt
+	@echo "\nRunning test_encrypted..."
+	@./$(TARGET) < test_encrypted.txt
+	@echo "\nRunning test_complex..."
+	@./$(TARGET) < test_complex.txt
+	@echo "\nAll tests passed!"
 
 clean:
 	rm -f $(TARGET)

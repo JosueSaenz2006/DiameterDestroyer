@@ -72,6 +72,26 @@ Output:
 10
 ```
 
+## Testing
+
+Multiple test cases are provided to verify the solution:
+
+- **test1.txt**: Basic operations with encryption
+- **test2.txt**: Linear tree with sequential queries
+- **test3.txt**: Tree with negative weights
+- **test_encrypted.txt**: Tests XOR encryption logic
+- **test_complex.txt**: Star tree with multiple branches
+
+Run all tests:
+```bash
+make test
+```
+
+Or run individual tests:
+```bash
+./solution < test1.txt
+```
+
 ## Implementation Details
 
 - Handles negative edge weights correctly
