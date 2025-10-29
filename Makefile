@@ -20,6 +20,8 @@ test: $(TARGET)
 	@./$(TARGET) < test_encrypted.txt
 	@echo "\nRunning test_complex..."
 	@./$(TARGET) < test_complex.txt
+	@echo "\nRunning test_comprehensive..."
+	@./$(TARGET) < test_comprehensive.txt
 	@echo "\nAll tests passed!"
 
 clean:
