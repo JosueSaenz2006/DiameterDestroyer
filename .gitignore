@@ -1,0 +1,12 @@
+# Compiled binaries
+solution
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Test output
+*.log
+output.txt
