@@ -8,6 +8,7 @@ using namespace std;
 
 const int MAXN = 300005;
 const int LOGN = 20;
+const long long NEGATIVE_INF = -1e18;
 
 int N, M;
 vector<pair<int, long long>> adj[MAXN];  // adjacency list: (neighbor, weight)
@@ -57,7 +58,7 @@ struct SegmentTree {
         if (candidates.size() == 1) return {candidates[0], candidates[0]};
         
         int best_a = -1, best_b = -1;
-        long long max_dist = -1e18;
+        long long max_dist = NEGATIVE_INF;
         
         for (size_t i = 0; i < candidates.size(); i++) {
             for (size_t j = i + 1; j < candidates.size(); j++) {
@@ -125,9 +126,9 @@ void dfs_euler(int u, int parent, int d, long long dist) {
 }
 
 void build_sparse_table() {
-    // Initialize log table
+    // Initialize log table (only up to euler_size)
     log_table[1] = 0;
-    for (int i = 2; i < 2 * MAXN; i++) {
+    for (int i = 2; i <= euler_size; i++) {
         log_table[i] = log_table[i / 2] + 1;
     }
     
@@ -203,6 +204,7 @@ int main() {
         if (type == 1) {
             int x;
             cin >> x;
+            // XOR always produces non-negative result, so modulo is safe
             x = (x ^ abs(last_ans)) % N + 1;
             
             A.push_back(x);
